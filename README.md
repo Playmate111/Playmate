@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href='https://arxiv.org/abs/2502.07203'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
-  <a href='https://playmate111.github.io/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
+  <a href='https://playmate111.github.io/Playmate/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
 </div>
 
 
@@ -94,7 +94,7 @@
     </tr>
 </table>
 
-Explore [more examples](https://playmate111.github.io/).
+Explore [more examples](https://playmate111.github.io/Playmate/).
 
 
 ## 📝 Citation
