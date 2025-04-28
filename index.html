@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://github.com/Playmate111/PlayMate111.github.io -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+	
+	<link href="./PlayMate111/css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./src/github.min.css">
+	<link rel="stylesheet" href="./src/custom.css">
+	<link rel="stylesheet" href="./src/normalize.css">
+
+	<title>PlayMate111 Homepage</title>
+    <link href="./src/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+   audio, video {
+       width: 100%;
+       margin-bottom: 10px;
+   }
+   a {
+	   color: #FFA500;
+	   font-weight: bold;
+   }
+    bb {
+	   color: #FF0000;
+	   font-weight: bold;
+   }
+   bk {
+	   color: #000000;
+	   font-weight: black;
+   }
+   .table>:not(caption)>*>* {
+    	background-color: transparent;
+   }
+     
+   body {
+            background-color: #800080;  
+   }
+  </style>
+
+ 
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="" style="background: linear-gradient(93deg, #5A5AAD 7.56%, #8F4586 92.68%)">
+
+<div class="container">
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope="" itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 p-5 mb-5 rounded">
+	<div class="text-center">
+	<!-- <h2>Takin: A Cohort of Superior Quality Zero-shot Speech Generation Models </h2> -->
+	<div class="text-center:center;">
+		<h2>            
+            Playmate: Flexible Control of Portrait Animation via 3D-Implicit Space Guided Diffusion
+        </h2>
+
+      <!-- [<a href="">Paper</a>] -->
+      [<a href="">Paper</a>]		
+	  [<a href="">Code Coming Soon </a>] 
+        <p class="fst-italic mb-0">
+			<br>
+			<b>Anonymous Team</b>
+		</p><p></p>
+        <p></p>
+        <p>Anonymous Inc.</p>
+	</div>
+	<p style="text-align: left"><b>Abstract:</b>
+<!--		Introduce TakinAudioLLM, ....-->
+  Recent diffusion-based talking face generation models have demonstrated impressive potential in synthesizing videos that accurately match a speech audio clip with 
+a given reference identity. However, existing approaches still encounter significant challenges due to uncontrollable factors, such as inaccurate lip-sync,
+ inappropriate head posture and the lack of fine-grained control over facial expressions. 
+In order to introduce more face-guided conditions beyond speech audio clips, a novel two-stage training framework   <b class="fst-italic mb-0">Playmate</b>
+ is proposed to generate more lifelike facial expressions and talking faces. 
+In the first stage, we introduce a decoupled implicit 3D representation along with a meticulously designed   <b class="fst-italic mb-0">motion-decoupled module</b> 
+ to facilitate more accurate attribute disentanglement and generate expressive talking videos directly from audio cues. Then, in the second stage, 
+ we introduce an  <b class="fst-italic mb-0">emotion-control module</b> to encode emotion control information into the latent space, enabling fine-grained control 
+ over emotions and thereby achieving the ability to generate talking videos with desired emotion. Extensive experiments demonstrate that Playmate outperforms
+ existing state-of-the-art methods in terms of video quality and lip-synchronization, and improves flexibility in controlling emotion and head pose. 
+ 
+	<!-- <p style="text-align: center;">
+		<img src="pics/takin-tts-emo.png" height="480" width="1280">
+	</p> -->
+	</p>
+
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="overview" style="text-align: center;"></h2>
+
+		<p style="text-align: center;">
+			<img src="./src/1.png"  width="1000">
+		</p>
+
+	<p style="text-align: left;">
+	<bk><b class="fst-italic mb-0">Playmate</b>  can generate lifelike talking faces for arbitrary identity, guided by a speech audio clip and a variety of
+optional control conditions. (a) shows the generation results under different emotional conditions using the same audio clip.
+The top row in (b) shows the driving images, while the bottom row shows the generated results. The poses in the generated
+results are controlled by the driving images, and the lip movements are guided by the driving audio. (c) demonstrates highly
+accurate lip synchronization and vivid, rich expressions across different style images. </bk>
+
+	</p>
+</div>
+
+
+<!------ Application -------------------------->
+
+<!------ Overview of Playmate-------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+    <h2 id="overview" style="text-align: center;">Overview of Playmate</h2>
+    
+        <p style="text-align: center;">
+            <img src="./src/2.png"   width="1000">
+        </p>
+    
+    <p style="text-align: left;">
+		<bk> <bk><b class="fst-italic mb-0">Playmate</b> is a two-stage training framework that leverages a 3D-Implicit Space Guided
+Diffusion Model to generate lifelike talking faces. In the first stage, <bk><b class="fst-italic mb-0">Playmate</b> utilizes a motion-decoupled module to enhance attribute
+disentanglement accuracy and trains a diffusion transformer to generate motion sequences directly from audio cues. In the second
+stage, we use an emotion-control module to encode emotion control information into the latent space, enabling fine-grained control over
+emotions, thereby improving flexibility in controlling emotion and head pose </bk>
+    </p>
+</div>
+
+
+<!------ show -------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+    <h2 id="overview" style="text-align: center;"> Disentanglement between Head Pose and Facial Dynamics </h2>
+    
+        <p style="text-align: center;">
+            <img src="./src/Disentanglement.png"   width="1000">
+        </p>
+    
+    <p style="text-align: left;">
+		From top to bottom: the raw generated sequence, applying generated poses with fixed initial facial dynamics, and applying generated facial dynamics with fixed initial head pose and pre-defined spinning poses.
+    </p>
+</div>
+
+<!------ Audio driven examples-------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-1" style="text-align: center;">Audio Driven Examples</h2>
+		<div class="table-responsive pt-1">
+			<table class="table table-hover pt-1">
+				<tbody>
+					<tr style="height: 50px;"></tr>
+				<tr>
+					<th colspan="4" style="vertical-align: middle; text-align: center"> Audio Driven (Talking) </th>
+					<th style="vertical-align: middle; text-align: center;"></th>
+				</tr>
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 250px;">							
+								  <source src="videos/stage1/results_1_loopy_neutral_22.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  
+						  
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/results_4_IF-MDM_neutral_41.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/results_6_IF-MDM_neutral_14.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/results_8_IF-MDM_neutral_42.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						</div>
+					</td>		
+					</tr>
+					<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 250px;">							
+								  <source src="videos/stage1/results_1_loopy_neutral_60.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  						  
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/results_4_IF-MDM_neutral_52.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/results_6_IF-MDM_neutral_7.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/stage1/translation_04_02_neutral_26.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						</div>
+					</td>	
+					
+				</tr>
+				
+				 
+			<tr>
+					<th colspan="4" style="vertical-align: middle; text-align: center"> Audio Driven (Sing) </th>
+					<th style="vertical-align: middle; text-align: center;"></th>
+				</tr>
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/catch_my_breath_30s_neutral_41.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_1_memo_neutral_35.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_2_hallo2_neutral_36.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_5_loopy_neutral_15.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						</div>
+					</td>			
+					</tr>
+					<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/catch_my_breath_30s_neutral_62.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_2_hallo2_neutral_demo.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_5_loopy_neutral_66.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  <video controls="controls" style="width: 250px;">
+							  <source src="videos/sing/results_6_memo_neutral_46.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						</div>
+					</td>			
+					
+				</tr>
+				
+				 
+								
+				 
+				
+			</tbody>
+			</table>
+			</div>
+</div>
+
+
+
+
+
+<!------ Emotion Control examples -------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-3" style="text-align: center;"> Emotion Controllability </h2>
+	<p></p>
+	<!-- <p style="text-align: center;">
+		<img src="pics/S2ST.png" height="368" width="1600">
+	</p> -->
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2" style="margin-bottom: 0px">
+				<tbody>			
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_cases/4.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_cases/11.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_cases/15.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_cases/27.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_cases/demo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+
+					</td>
+				</tr>
+				</tbody>
+			
+			</table>			
+             <table class="table table-hover" style="margin-top: 0px ; width: 1000px">				 
+					<tr>
+					<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Angry</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Disgusted</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Contempt</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Fear</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Happy</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Sad</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 142;">Surprised</th>	
+					</tr>
+				 
+			</table>
+		</div>
+</div>
+
+ <div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-3" style="text-align: center;"> Emotion Controllability Comparsion (Male) </h2>
+	<p></p>
+	<!-- <p style="text-align: center;">
+		<img src="pics/S2ST.png" height="368" width="1600">
+	</p> -->
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2" style="margin-bottom: 0px">
+				<tbody>			
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_vs/male_10s.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						 
+
+					</td>
+				</tr>
+				</tbody>
+			
+			</table>			
+             <table class="table table-hover" style="margin-top: 0px ; width: 1000px">				 
+					<tr>
+					    <th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">  </th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Angry</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Disgusted</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Contempt</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Fear</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Happy</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Sad</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Surprised</th>	
+						
+						
+					</tr>
+				 
+			</table>
+		</div>
+</div>
+
+
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-3" style="text-align: center;"> Emotion Controllability Comparsion (Female) </h2>
+	<p></p>
+	<!-- <p style="text-align: center;">
+		<img src="pics/S2ST.png" height="368" width="1600">
+	</p> -->
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2" style="margin-bottom: 0px">
+				<tbody>			
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/emotion_vs/female.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						 
+
+					</td>
+				</tr>
+				</tbody>
+			
+			</table>			
+             <table class="table table-hover" style="margin-top: 0px ; width: 1000px">				 
+					<tr>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">  </th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Angry</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Disgusted</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Contempt</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Fear</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Happy</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Sad</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 125;">Surprised</th>
+					</tr>
+				 
+			</table>
+		</div>
+</div>
+
+ 
+
+<!------ Video driven examples -------------------------->
+<!------ Video driven examples -------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-3" style="text-align: center;">Method Comparsion (Audio Driven)</h2>
+	<p></p>
+	<!-- <p style="text-align: center;">
+		<img src="pics/S2ST.png" height="368" width="1600">
+	</p> -->
+		<div class="table-responsive pt-3">
+			<table class="table table-hover" style="margin-top: 0px">
+				<thead>
+					<tr>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;"><bb><b>Playmate</b></bb></th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;">Hallo</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;">Hallo2</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;">JoyVASA</th>
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;">MEMO</th>	
+						<th colspan="1" style="vertical-align: middle;text-align: center;width: 166;">Sonic</th>	
+					</tr>
+				</thead>
+				
+			</table>
+			<table class="table table-hover" style="margin-top: 0px">
+				<tbody>					
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+					<!--  多个 <span> </span> 放到同一行，<br> 换行  --> 
+					  
+						<video controls="controls" style="width: 1000px;">							
+							 <source src="videos/video_compare/results_1_loopy_neutral_3.mp4" type="video/mp4"> 
+							Your browser does not support the video tag.
+						</video><br>
+						 						
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/video_compare/results_1_loopy_neutral_22.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/video_compare/results_4_IF-MDM_neutral_40_hstack.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/video_compare/results_6_IF-MDM_neutral_48_hstack.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+						<video controls="controls" style="width: 1000px;">
+							<source src="videos/video_compare/results_8_IF-MDM_neutral_36_hstack.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video><br>
+					</td>
+				</tr>
+				
+				</tbody>
+			</table>
+			
+		</div>
+</div>
+
+<!------ pose control examples -------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-1" style="text-align: center;"> Pose Control Capability </h2>
+		<div class="table-responsive pt-1">
+			<table class="table table-hover pt-1">
+				<tbody>
+					<tr style="height: 50px;"></tr>
+				
+				<tr>
+					<th colspan="4" style="vertical-align: middle; text-align: center">  3DoF Pose Control Visualization  </th>
+					<th style="vertical-align: middle; text-align: center;"></th>
+				</tr>
+				
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 500px;">							
+								  <source src="videos/poseControl/32.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  
+						  
+						  <video controls="controls" style="width: 500px;">
+							  <source src="videos/poseControl/2.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  
+						</div>
+					</td>		
+					</tr> 
+			<tr>
+
+			</tr> 
+		 
+				 
+			 
+				
+			</tbody>
+			</table>
+			
+			<td colspan="4" style="vertical-align: top; text-align: center;">
+			  <p style="text-align: left;">
+				<bk> In the two videos mentioned above, the right video is generated through pose-driven animation technology (Playmate) based on the human body movements captured from the character in the left video </bk>
+
+				</p>
+			</td>
+			
+			</div>
+</div>
+
+
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-1" style="text-align: center;"> Pose and Facial Expression Decoupling Effect </h2>
+		<div class="table-responsive pt-1">
+			<table class="table table-hover pt-1">
+				<tbody>
+					<tr style="height: 50px;"></tr>
+				
+				 
+				
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 1000px;">							
+								  <source src="videos/pose_control_demo/female.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  						  						 
+						</div>
+					</td>		
+					</tr>
+		 
+				
+				<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 1000px;">							
+								  <source src="videos/pose_control_demo/male.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  						  						 
+						</div>
+					</td>		
+					</tr>
+			
+
+								
+				 
+				
+			</tbody>
+			</table>
+			
+			<td colspan="4" style="vertical-align: top; text-align: center;">
+			  <p style="text-align: left;">
+				<bk> The first row displays the reference image, the first column shows the pose control mode, and the remaining cells present the generated results. The pose in the second row is controlled by the video on the left, the pose in the third row consists of pre-defined spinning poses, and the pose in the last row is a fixed pose. </bk>
+
+				</p>
+			</td>
+			
+			</div>
+</div>
+
+
+<!------ 和sonic 效果对比 -------------------------->
+<div class="container pt-5 mt-5 p-3 mb-5 bg-body-tertiary bg-light bg-opacity-50 rounded">
+	<h2 id="App-S2ST-1" style="text-align: center;"> Effect Comparison between Playmate with Sonic </h2>
+		<div class="table-responsive pt-1">
+			<table class="table table-hover pt-1">
+				<tbody>
+					<tr style="height: 50px;"></tr>
+				
+				 
+				 	<tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 500px;">							
+								  <source src="videos/vs_sonic/0.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  
+						  
+						  <video controls="controls" style="width: 500px;">
+							  <source src="videos/vs_sonic/1.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  
+						</div>
+					</td>		
+					</tr> 
+				
+				  <tr>
+					<td colspan="4" style="vertical-align: top; text-align: center;">
+						<div style="display: flex; justify-content: center; gap: 10px;">
+										 	
+							  <video controls="controls" style="width: 500px;">							
+								  <source src="videos/vs_sonic/2.mp4" type="video/mp4">
+								  Your browser does not support the video tag.
+							  </video>							   								 							   
+						  
+						  
+						  <video controls="controls" style="width: 500px;">
+							  <source src="videos/vs_sonic/3.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+						  </video>
+						  
+						</div>
+					</td>		
+					</tr> 
+			
+
+								
+				 
+				
+			</tbody>
+			</table>
+			
+			<td colspan="4" style="vertical-align: top; text-align: center;">
+			  <p style="text-align: left;">
+				<bk> In each of the videos above, the left video is generated by Playmate, while the right one is generated by Sonic. </bk>
+
+				</p>
+			</td>
+			
+			</div>
+</div>
+
+
+
+<div class="content" id="acknowledgements">
+  <p>Acknowledgements:
+    The webpage template is borrowed from <a href="https://everest-ai.github.io/takinada/" style="text-decoration: none;">Takin-ADA</a>. We thank the authors for their codebase.
+  </p>
+</div>
+
+ 
+</style></template></div></div><div id="smooth-play-app" data-v-app=""><section data-v-9e2d12d2=""></section></div>
+</html>
+ 
+
+ 
