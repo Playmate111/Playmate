@@ -1,15 +1,41 @@
 <h1 align="center">Playmate: Flexible Control of Portrait Animation via 3D-Implicit Space Guided Diffusion</h1>
 
+<div align='center'>
+    <a href='https://github.com/MmomoS' target='_blank'>Xingpei Ma</a><sup>*</sup>&emsp;
+    <a href='https://github.com/caijiaran1993' target='_blank'>Jiaran Cai</a><sup>*†</sup>&emsp;
+    <a href='https://github.com/Guanyuansheng' target='_blank'>Yuansheng Guan</a><sup>*</sup>&emsp;
+    <a href='https://github.com/huangshenneng' target='_blank'>Shenneng Huang</a><sup></sup>&emsp;
+    <a href='https://github.com/' target='_blank'>Qiang Zhang</a><sup></sup>
+    <a href='https://github.com/' target='_blank'>Shunsi Zhang</a><sup></sup>
+</div>
+<div align='center'>
+    <small><sup>*</sup> Equal contribution</small>
+    <small><sup>†</sup>Project lead</small>
+</div>
+
+<div align='center'>
+Guangzhou Quwan Network Technology
+</div>
+<br>
+
 <div align="center">
   <a href='https://arxiv.org/abs/2502.07203'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
   <a href='https://playmate111.github.io/Playmate/'><img src='https://img.shields.io/badge/Project-HomePage-Green'></a>
 </div>
 
+<div align='Center'>
+    <i><strong><a href='https://icml.cc/Conferences/2025' target='_blank'>ICML 2025</a></strong></i>
+</div>
+<br>
+
 
 ## 📰 News
 
+- **`2025/05/07`**: 🎉🎉🎉 Super stoked to share that our paper has been accepted to [ICML 2025](https://icml.cc/Conferences/2025)!
 - **`2025/04/28`**: ✨✨✨ Created a GitHub repository for the project.
 - **`2025/02/11`**: 🚀🚀🚀 Our [paper](https://arxiv.org/abs/2502.07203) is in public on arxiv.
+
+
 
 ## 📑 Todo List
 - [ ] Inference code for the first stage.
@@ -18,6 +44,8 @@
 - [ ] Release pretrained models for the second stage.
 - [ ] Release the training code for the first stage.
 - [ ] Release the training code for the second stage.
+
+
 
 ## 📸 Showcase
 ### Audio Driven (Talking)
@@ -38,6 +66,7 @@
 
 </table>
 
+
 ### Audio Driven (Sing)
 
 <table class="center">
@@ -55,6 +84,7 @@
 </tr>
 
 </table>
+
 
 ### Emotion Controllability
 <table> 
@@ -95,6 +125,7 @@
 </table>
 
 Explore [more examples](https://playmate111.github.io/Playmate/).
+
 
 
 ## 📝 Citation
