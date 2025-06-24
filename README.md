@@ -1,7 +1,7 @@
 <h1 align="center">Playmate: Flexible Control of Portrait Animation via 3D-Implicit Space Guided Diffusion</h1>
 
 <div align='center'>
-    <a href='https://github.com/MmomoS' target='_blank'>Xingpei Ma</a><sup>*</sup>&emsp;
+    <a href='https://github.com/XPMarcus' target='_blank'>Xingpei Ma</a><sup>*</sup>&emsp;
     <a href='https://github.com/caijiaran1993' target='_blank'>Jiaran Cai</a><sup>*†</sup>&emsp;
     <a href='https://github.com/Guanyuansheng' target='_blank'>Yuansheng Guan</a><sup>*</sup>&emsp;
     <a href='https://github.com/huangshenneng' target='_blank'>Shenneng Huang</a><sup></sup>&emsp;
