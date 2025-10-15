@@ -30,7 +30,7 @@ Guangzhou Quwan Network Technology
 
 
 ## 📰 News
-- **`2025/10/15`**: 🔥🔥🔥 We released [**Playmate2**](https://github.com/Playmate111/Playmate2), a novel DiT framework for generating long-duration high-quality audio-driven videos. Playmate2 also supports multi-character animation. To the best of our knowledge, Playmate2 is the first training-free approach capable of enabling audio-driven animation for three or more characters.
+- **`2025/10/15`**: 🔥🔥🔥 We released [**Playmate2**](https://github.com/Playmate111/Playmate2), a novel DiT framework for generating long-duration high-quality audio-driven videos. Playmate2 also supports multi-character animation. To the best of our knowledge, Playmate2 is the first training-free approach capable of enabling audio-driven animation for three or more characters. Codes and models will release, please stay tuned!
 - **`2025/05/07`**: 🎉🎉🎉 Super stoked to share that our paper has been accepted to [ICML 2025](https://icml.cc/Conferences/2025)!
 - **`2025/04/28`**: ✨✨✨ Created a GitHub repository for the project.
 - **`2025/02/11`**: 🚀🚀🚀 Our [paper](https://arxiv.org/abs/2502.07203) is in public on arxiv.
@@ -133,10 +133,10 @@ Explore [more examples](https://playmate111.github.io/Playmate/).
 If you find our work useful for your research, please consider citing the paper:
 
 ```
-@article{ma2025playmate,
+@inproceedings{maplaymate,
   title={Playmate: Flexible Control of Portrait Animation via 3D-Implicit Space Guided Diffusion},
   author={Ma, Xingpei and Cai, Jiaran and Guan, Yuansheng and Huang, Shenneng and Zhang, Qiang and Zhang, Shunsi},
-  journal={arXiv preprint arXiv:2502.07203},
-  year={2025}
+  booktitle={Forty-second International Conference on Machine Learning}
 }
+
 ```
