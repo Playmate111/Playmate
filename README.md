@@ -30,6 +30,7 @@ Guangzhou Quwan Network Technology
 
 
 ## 📰 News
+- **`2025/11/11`**: 🎉🎉🎉 Our [Playmate2 paper](https://arxiv.org/abs/2510.12089) has been accepted and will be presented at [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/). We plan to release the inference code and model weights for both [**Playmate**](https://github.com/Playmate111/Playmate) and [**Playmate2**](https://github.com/Playmate111/Playmate2) in the coming weeks. Stay tuned and thank you for your patience!
 - **`2025/10/15`**: 🔥🔥🔥 We released [**Playmate2**](https://github.com/Playmate111/Playmate2), a novel DiT framework for generating long-duration high-quality audio-driven videos. Playmate2 also supports multi-character animation. To the best of our knowledge, Playmate2 is the first training-free approach capable of enabling audio-driven animation for three or more characters. Codes and models will release, please stay tuned!
 - **`2025/05/07`**: 🎉🎉🎉 Super stoked to share that our paper has been accepted to [ICML 2025](https://icml.cc/Conferences/2025)!
 - **`2025/04/28`**: ✨✨✨ Created a GitHub repository for the project.
