@@ -1,0 +1,36 @@
+from yacs.config import CfgNode as CN
+
+
+_C = CN()
+_C.DECODER_TYPE = "NoiseDecoder"
+
+_C.D_MODEL = 512
+_C.D_STYLE = 11
+
+_C.DATASET = CN()
+_C.DATASET.FACE3D_DIM = 52
+
+_C.DIFFUSION = CN()
+_C.DIFFUSION.SCHEDULE = CN()
+_C.DIFFUSION.SCHEDULE.NUM_STEPS = 1000
+_C.DIFFUSION.SCHEDULE.BETA_1 = 1e-4
+_C.DIFFUSION.SCHEDULE.BETA_T = 0.02
+_C.DIFFUSION.SCHEDULE.MODE = "linear"  # "cosine"
+
+_C.CONTENT_ENCODER = CN()
+_C.CONTENT_ENCODER.seq_len = 1
+_C.CONTENT_ENCODER.blocks = 12
+_C.CONTENT_ENCODER.channels = 768
+_C.CONTENT_ENCODER.intermediate_dim = 512
+_C.CONTENT_ENCODER.output_dim = _C.D_MODEL
+_C.CONTENT_ENCODER.context_tokens = 1
+
+_C.DECODER = CN()
+_C.DECODER.d_model = _C.D_MODEL
+_C.DECODER.d_style = _C.D_STYLE
+_C.DECODER.output_dim = _C.DATASET.FACE3D_DIM
+_C.DECODER.n_diff_steps = _C.DIFFUSION.SCHEDULE.NUM_STEPS
+
+
+def get_cfg_defaults():
+    return _C.clone()

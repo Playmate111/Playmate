@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+examples/outputs/
+pretrained_weights/*
+!pretrained_weights/.gitkeep
