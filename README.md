@@ -178,20 +178,19 @@ ffmpeg -version
 | Models               | Download Link                                                                                                                                                                       | Save Path                                                   |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
 | wav2vec2-base-960h   | [Huggingface](https://huggingface.co/facebook/wav2vec2-base-960h)                                                                                                                     | `pretrained_weights/wav2vec2-base-960h`                     |
-| Our Pretrained Model | [ModelScope](https://modelscope.cn/models/alkdjfklaj/Playmate) / [Huggingface](https://huggingface.co/PlaymateAI/Playmate)                                                             | `pretrained_weights`                                        |
+| Our Pretrained Model | [ModelScope](https://modelscope.cn/models/alkdjfklaj/Playmate)                                                                                                                         | `pretrained_weights`                                        |
 
-Download models using `modelscope` or `huggingface-cli`:
+Download models using `modelscope` (for our pretrained model) or `huggingface-cli` (for wav2vec2):
 
-**ModelScope (recommended):**
+**ModelScope (our pretrained model):**
 ```bash
 pip install modelscope
 modelscope download --model alkdjfklaj/Playmate --local_dir ./pretrained_weights
 ```
 
-**Huggingface:**
+**Huggingface (wav2vec2 only):**
 ```bash
 huggingface-cli download facebook/wav2vec2-base-960h --local-dir ./pretrained_weights/wav2vec2-base-960h
-huggingface-cli download PlaymateAI/Playmate --local-dir ./pretrained_weights
 ```
 
 If your `huggingface_hub` version has removed `huggingface-cli`, use the equivalent `hf download` command instead.
